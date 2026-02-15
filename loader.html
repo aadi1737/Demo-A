@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Loader</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .loader {
+            background-color: white;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 15px solid black;
+            border-top: 15px solid #ff0050;
+            /* TikTok pink */
+            animation: load linear 1s infinite;
+        }
+        @keyframes load {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+        <div class="loader"></div>
+</body>
+
+<script>
+    window.addEventListener("load",()=>{
+        document.querySelector(".loader").classList.add("hidden");
+    });
+</script>
+</html>

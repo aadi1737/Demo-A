@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Image Compare</title>
+    <link rel="stylesheet" href="splitter.css">
+</head>
+
+<body>
+    <div>
+        <input type="text" 
+               value="400"
+               oninput="this.style.left = this.value + 'px'; 
+                        document.querySelector('img:first-of-type').style.clip = 'rect(0, ' + this.value + 'px, 500px, 0)';"
+               onmousedown="this.setAttribute('readonly', true);"
+               onmouseup="this.removeAttribute('readonly');"
+               onmousemove="if(this.hasAttribute('readonly')) {
+                   let pos = event.clientX - this.parentElement.offsetLeft;
+                   if(pos < 0) pos = 0;
+                   if(pos > 800) pos = 800;
+                   this.value = pos;
+                   this.style.left = pos + 'px';
+                   document.querySelector('img:first-of-type').style.clip = 'rect(0, ' + pos + 'px, 500px, 0)';
+               }">
+        <img src="assets/before.jpg">
+        <img src="assets/after.jpg">
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Counter</title>
+    <style>
+        .container {
+            width: 270px;
+            height: 200px;
+            background-color: lightgray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 15px;
+            gap: 50px;
+            border: 3px solid black;
+        }
+
+        body {
+            background-color: lightsteelblue;
+        }
+
+        button {
+            color: white;
+        }
+
+        .increase {
+            background: red;
+        }
+
+        .decrease {
+            background-color: blueviolet;
+        }
+
+        span {
+            display: block;
+            font-size:larger
+        }
+        .counter-container{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Counters</h1>
+    <button id="counter-btn" style="color: black;">Add Counter</button>
+
+    <div class="counter-container">
+
+    </div>
+
+    <template id="counter-template">
+        <div class="container">
+            <span class="text">0</span>
+            <div>
+                <button class="increase">increase</button>
+                <button class="decrease">decrease</button>
+            </div>
+        </div>
+    </template>
+
+    <script src="counter.js"></script>
+</body>
+
+</html>

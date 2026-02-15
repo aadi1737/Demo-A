@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BAr Chart</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            border: 2px solid black;
+            box-shadow: 5px black;
+            height: 400px;
+            width: 400px;
+            align-items: end
+        }
+
+        .bar {
+            width: 60px;
+            height: 0px;
+            /* INITIAL BLANK */
+            margin: 0 5px;
+            transition: height 0.5s ease;
+        }
+
+        .b1 {
+            background-color: red;
+        }
+
+        /* Yaha daalo */
+        .b2 {
+            background-color: yellow;
+        }
+
+        /* Yaha daalo */
+        .b3 {
+            background-color: blueviolet;
+        }
+
+        .container:hover .b1 {
+            height: 300px;
+            /* animation: bottomUp steps(10) 2s infinite; */
+            transition-delay: 0s;
+        }
+
+        .container:hover .b2 {
+            height: 50px;
+            transition-delay: 0.5s;
+        }
+
+        .container:hover .b3 {
+            height: 150px;
+            transition-delay: 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="bar b1"></div>
+        <div class="bar b2"></div>
+        <div class="bar b3"></div>
+    </div>
+</body>
+
+</html>

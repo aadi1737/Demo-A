@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drip Effect</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .drip-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        /* Top bar / source */
+        .source {
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 20px;
+            background: #666;
+            border-radius: 2px;
+        }
+
+        /* Drops */
+        .drop {
+            position: absolute;
+            top: 70px;
+            left: 50%;
+            width: 12px;
+            height: 12px;
+            background: #00bcd4;
+            border-radius: 50% 50% 50% 0;
+            transform: translateX(-50%) rotate(-45deg);
+            animation: drip 2s ease-in infinite;
+            opacity: 0;
+        }
+
+        .drop2 {
+            animation: drip 2s ease-in 0.4s infinite;
+        }
+
+        .drop3 {
+            animation: drip 2s ease-in 0.8s infinite;
+        }
+
+        .drop4 {
+            animation: drip 2s ease-in 1.2s infinite;
+        }
+
+        .drop5 {
+            animation: drip 2s ease-in 1.6s infinite;
+        }
+
+        @keyframes drip {
+            0% {
+                top: 70px;
+                opacity: 1;
+                width: 12px;
+                height: 12px;
+            }
+            30% {
+                top: 120px;
+                width: 14px;
+                height: 14px;
+                opacity: 1;
+            }
+            70% {
+                top: 200px;
+                width: 16px;
+                height: 16px;
+                opacity: 0.8;
+            }
+            100% {
+                top: 280px;
+                width: 20px;
+                height: 20px;
+                opacity: 0;
+                transform: translateX(-50%) rotate(-45deg) scale(0.8);
+            }
+        }
+
+        /* Ripple effect at bottom */
+        .ripple {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 5px;
+            background: rgba(0,188,212,0.2);
+            border-radius: 50%;
+            animation: ripple 2s ease-out infinite;
+        }
+
+        @keyframes ripple {
+            0% {
+                width: 30px;
+                opacity: 0.3;
+            }
+            70% {
+                width: 50px;
+                opacity: 0.2;
+            }
+            100% {
+                width: 70px;
+                opacity: 0;
+            }
+        }
+
+        /* Water pool at bottom */
+        .pool {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 8px;
+            background: rgba(0,188,212,0.3);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="drip-container">
+        <div class="source"></div>
+        <div class="drop"></div>
+        <div class="drop drop2"></div>
+        <div class="drop drop3"></div>
+        <div class="drop drop4"></div>
+        <div class="drop drop5"></div>
+        <div class="ripple"></div>
+        <div class="pool"></div>
+    </div>
+</body>
+</html>
